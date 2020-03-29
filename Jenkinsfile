@@ -1,28 +1,28 @@
 pipeline {
-         agent tout 
+         agent any 
           
-   étapes {
-       étape ( ' Build ' ) {
-           pas {
-                    withMaven ( Maven : ' maven-3.6.3 ' ) {
+   stages {
+       stage ('Build') {
+           steps {
+                    withMaven(maven : 'maven-3.6.3') {
             
-               sh ' mvn clean compile '
+               sh 'mvn clean compile'
                     }
            }
        }
-       étape ( ' Test '  ) {
-           pas {
-                    withMaven ( Maven : ' maven-3.6.3 ' ) {
+       stage ('Test') {
+           steps {
+                    withMaven(maven : 'maven-3.6.3') {
                     
-               sh ' test mvn '
+               sh 'mvn test'
            }
        }
    }
-        étape ( ' déployer ' ) {
-           pas {
-                    withMaven ( Maven : ' maven-3.6.3 ' ) {
+        stage ('deploy') {
+           steps {
+                    withMaven(maven : 'maven-3.6.3') {
                     
-               sh ' mvn deploy '
+               sh 'mvn deploy'
            }
        }
    }     
