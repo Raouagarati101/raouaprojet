@@ -10,7 +10,7 @@ pipeline {
                     }
            }
        }
-       étape ( « Test » ) {
+       étape ( ' Test '  ) {
            pas {
                     withMaven ( Maven : ' maven-3.6.3 ' ) {
                     
@@ -18,7 +18,7 @@ pipeline {
            }
        }
    }
-        étape ( « déployer » ) {
+        étape ( ' déployer ' ) {
            pas {
                     withMaven ( Maven : ' maven-3.6.3 ' ) {
                     
